@@ -177,8 +177,9 @@ const long = x1 => x2 => x3 => x4 => x5 => x6 => x7 => x8 => x9 => x10 =>
 long('Why')('am')('I')('doing')('this')('with')('my')('precious')('time')('?');
 */
 
+/*
 /////////////////////////////////////////////////////////
-// The Call and Apply Methods
+// The Call, Apply and Bind Methods
 
 const lufthansa = {
   airline: 'Lufthansa',
@@ -229,3 +230,51 @@ book.apply(swiss, flightData);
 console.log(swiss);
 
 book.call(swiss, ...flightData);
+
+// The Bind Method
+// book.call(eurowings, 23, 'Sarah Williams');
+
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Steven Williams');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Danny Tran');
+bookEW23('Martha Cooper');
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application
+
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200));
+
+const addGST = addTax.bind(null, 0.05);
+// addGST = value => value + value * 0.05;
+
+console.log(addGST(100));
+console.log(addGST(23));
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+
+const addGST2 = addTaxRate(0.05);
+console.log(addGST2(100));
+console.log(addGST2(23));
+*/
