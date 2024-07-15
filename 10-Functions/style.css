@@ -1,0 +1,106 @@
+body {
+	padding: 5rem 0rem;
+}
+
+header,
+section {
+	line-height: 1.5;
+	font-family: sans-serif;
+	margin-top: 5rem;
+}
+section p {
+	
+}
+
+
+
+body > section:nth-child(3) > section > h3:nth-child(2) {
+	padding-top: 0.5rem;
+}
+
+h1,
+h2,
+h3 {
+	font-size: 48px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+h1 {
+	font-size: 6.5rem!important;
+	margin: 0!important;
+	font-weight: bold!important;
+	;
+}
+
+h2 {
+	font-size: 42px!important;
+	font-weight: 800;
+	letter-spacing: 2rem;
+	margin-top: 6rem!important;
+}
+
+
+h3 {
+	font-size: 16px;
+	padding-top: 2rem;
+	font-weight: bold!important;
+}
+
+h4 {
+	margin-top: 1.0rem;
+}
+
+.type-desc {
+	padding-top: 1.5rem;
+}
+
+body > section:nth-child(5) > h4:nth-child(4),
+body > section:nth-child(5) > h4:nth-child(15),
+body > section:nth-child(5) > h4:nth-child(24) {
+	margin-top: 0.5rem;
+}
+
+header {
+	border-bottom: 1px solid black;
+}
+
+
+header p.tagline {
+	font-size: 24px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-style: italic;
+}
+
+header li {
+	float: left;
+	margin-right: 25px;
+}
+
+.description {
+	padding-top: 5rem;
+	padding-bottom: 2rem;
+}
+
+.specials {
+	padding: 5rem 0rem;
+	background-color: lightgray;
+	margin: 5rem 11rem;
+}
+
+.specials h2 {
+	margin-top: 0!important;
+	letter-spacing: 0.5rem;
+    font-size: 30px!important;
+    text-align: center;
+    background-color: white;
+    display: inline-block;
+}
+
+.drinks h4 {
+	padding-top: 2.5rem;
+}
+
+/********************** Your Code Goes Here ******************/
