@@ -150,3 +150,27 @@ const words = ['hello', 'world', 'javascript', 'higher', 'order', 'functions'];
 console.log(transformArray(words, upperCase));
 console.log(transformArray(words, reverseStr));
 */
+
+/////////////////////////////////////////////////////////
+// Functions Returning Functions
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Jonas');
+greeterHey('Steven');
+
+greet('Hello')('Jonas');
+
+const greet2 = greeting => name => {
+  console.log(`${greeting} ${name}`);
+};
+
+const long = x1 => x2 => x3 => x4 => x5 => x6 => x7 => x8 => x9 => x10 =>
+  console.log(`${x1} ${x2} ${x3} ${x4} ${x5} ${x6} ${x7} ${x8} ${x9} ${x10}`);
+
+long('Why')('am')('I')('doing')('this')('with')('my')('precious')('time')('?');
