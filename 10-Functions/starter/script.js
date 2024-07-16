@@ -328,6 +328,7 @@ const lufthansa = {
 lufthansa.book(239, 'Danny Tran');
 lufthansa.book(635, 'John Smith');
 console.log(lufthansa);
+console.log('-------------------------------------------------------');
 
 const poll = {
   question: 'What is your favourite programming language?',
@@ -335,23 +336,20 @@ const poll = {
   // This generates [0, 0, 0, 0]. More in the next section 😃
   answers: new Array(4).fill(0),
   reigsterNewAnswer() {
-    const answer = prompt(`What is your favourite programming language?
-  0: JavaScript
-  1: Python
-  2: Rust
-  3: C++
-  (Write option number)`);
-
-    if (answer === 0) {
-      this.answers[0].push({ answers });
-    } else if (answer === 1) {
-      this.answers[1]++;
-    } else if (answer === 2) {
-      this.answers[2]++;
-    } else if (answer === 3) {
-      this.answers[3]++;
-    }
+    // Get answer
+    const answer = Number(
+      prompt(`${this.question}\n${this.options.join(
+        '\n'
+      )}\n(Write an option number)
+      `)
+    );
+    // Register answer
+    typeof answer === 'number' &&
+      answer < this.answers.length &&
+      this.answers[answer]++;
   },
 };
 
-poll.reigsterNewAnswer();
+document
+  .querySelector('.poll')
+  .addEventListener('click', poll.reigsterNewAnswer.bind(poll));
